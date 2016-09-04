@@ -1,0 +1,38 @@
+name:                servant-python
+version:             0.1.0.0
+synopsis:            Python client code generator for servant.
+description:         Please see README.md
+homepage:            https://github.com/dbalan/servant-python#readme
+license:             BSD3
+license-file:        LICENSE
+author:              dbalan
+maintainer:          mail@dbalan.in
+copyright:           2016 Dhananjay
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Servant.Python
+                       
+  build-depends:       base >= 4.7 && < 5
+                     , text >= 1.2
+                     , servant-foreign >= 0.7 && < 0.8
+                     , lens
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings
+
+test-suite servant-python-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , servant-python
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/dbalan/servant-python
